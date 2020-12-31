@@ -132,7 +132,24 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'HTML & (S)CSS', 'React', 'Vue', 'Node.js', 'WordPress'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'HTML & (S)CSS',
+    'React',
+    'Angular',
+    'D3.js',
+    'Tableau',
+    'Python',
+    'Flask',
+    'Django',
+    'Ruby on Rails',
+    'AWS',
+    'Linux',
+    'MySQL',
+    'PostgreSQL',
+  ];
+
+  const researchInterests = ['eHealth Applications', 'Clinical and Clinical Research Informatics'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -141,27 +158,28 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>Hello! I'm Brittany, a software engineer based in Boston, MA.</p>
-
             <p>
-              I enjoy creating things that live on the internet, whether that be websites,
-              applications, or anything in between. My goal is to always build products that provide
-              pixel-perfect, performant experiences.
+              Hi! I'm Xing, a PhD student in the{' '}
+              <a href="https://hobi.med.ufl.edu/">Health Outcomes & Biomedical Informatics</a>,
+              College of Medicine, University of Florida.
             </p>
 
             <p>
-              Shortly after graduating from{' '}
-              <a href="https://www.ccis.northeastern.edu">Northeastern University</a>, I joined the
-              engineering team at <a href="https://www.upstatement.com">Upstatement</a> where I work
-              on a wide variety of interesting and meaningful projects on a daily basis.
+              I enjoy creating things that are related to healthcare and live on the internet,
+              whether that be websites, applications, or anything in between. My goal is to always
+              build products that make broader inpact to the healthcare field.
             </p>
-
+            <p>Here are my current research interests:</p>
+            <ul className="skills-list">
+              {researchInterests &&
+                researchInterests.map((interest, i) => <li key={i}>{interest}</li>)}
+            </ul>
+            <br></br>
             <p>Here are a few technologies I've been working with recently:</p>
+            <ul className="skills-list">
+              {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
+            </ul>
           </div>
-
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
         </StyledText>
 
         <StyledPic>
